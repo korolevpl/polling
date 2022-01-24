@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+[Controller]
+[DTO]
+[Domain]
+[Repository]
+database "DBMS" as db
+
+HTTP - [Controller]
+[Controller] <--> "model's object" [Domain]
+[Controller] <--> "model's object" [DTO]
+[Domain] <--> "model's object" [Repository]
+[Repository] <--> db
+
+@enduml

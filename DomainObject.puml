@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Poll
+class Vote
+class Option
+
+class Poll {
+- id: Long
+- question: String
+- options: Set
+-- Getters --
+-- Setters --
+}
+
+class Option {
+- id: Long
+- value: String
+-- Getters --
+-- Setters --
+}
+
+class Vote {
+- id: Long
+- option: Option
+-- Getters --
+-- Setters --
+}
+
+Poll "1" *-- "0..*" Option
+Vote "0..*" --> "1" Option
+
+@enduml
